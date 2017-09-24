@@ -27,8 +27,8 @@ const scrambler =  {
 
   /**
    *
-   * @param selector <String>: JQuery selector to be used to find message characters in scrambled HTML
-   * @returns <String>: Returns the message unscrambled
+   * @param selector <String>: JQuery selector to be used to find message characters in scrambled HTML.
+   * @returns <String>: Returns the message unscrambled.
    */
   unscramble(selector) {
     return $(selector).map(function () {

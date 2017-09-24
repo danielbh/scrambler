@@ -18,10 +18,8 @@
 
         const scrambleBtn =
           $("<input id='scramble' type='button' value='scramble' />").click(function() {
-            $(this).attr({ disabled: true });
             animateMessageChange(()=> {
               $('#message').html(scrambler.scramble('#message-field'));
-              $(this).attr({ disabled: false });
             });
           });
 
@@ -32,6 +30,7 @@
             // to not be displayed.
             const hiddenMessage = $('*[hidden]').length;
             if(hiddenMessage) {
+              // Disable the button to prevent issues that can occur mid-animation.
               $(this).attr({ disabled: true });
               animateMessageChange(()=> {
                 $('#message').text(scrambler.unscramble('*[hidden]'));
