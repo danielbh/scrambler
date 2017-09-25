@@ -25,9 +25,9 @@
 
         const unscrambleBtn =
           $("<input id='unscramble' type='button' value='unscramble' />").click(function() {
-            // Edge case bug prevention. We must be very careful to check
-            // if the message is currently scrambled. If not bugs will occur and cause the message
-            // to not be displayed.
+            // Check if there are hidden message elements that can be found by the selector to be used
+            // to unscramble the message. If there aren't, then the unscramble function will 
+            // return an empty string.
             const hiddenMessage = $('*[hidden]').length;
             if(hiddenMessage) {
               // Disable the button to prevent issues that can occur mid-animation.
